@@ -1,0 +1,163 @@
+.container {
+    display: grid;
+    /* grid-gap: 10px; */
+    grid-template-columns: 40% 1fr;
+    grid-template-rows: auto;
+    justify-content: center;
+    grid-auto-rows: auto;
+}
+
+ .navbar, .photo, .portfolio, .skills, .footer {
+    grid-column: 1 / -1;
+    
+} 
+
+.personalData {
+    grid-row: 3 / 6;
+    background-color: rgba(76, 96, 100, 0.6);
+    color: rgb(239, 245, 217);
+}
+
+#menu {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+.menuItem {
+    float: left;
+    width: 20%;
+}
+
+.menuLink {
+    display:block;
+    min-width:140px;
+    text-align: center;
+    line-height: 30px;
+    color: rgb(239, 245, 217);
+    background: rgb(51, 52, 54);
+    text-decoration: none;
+}
+
+.menuItem:hover a {
+    background: rgba(76, 96, 100);
+}
+
+.menubar {
+    text-decoration: none;
+    color: rgb(239, 245, 217);
+    background: rgba(76, 96, 100);
+    text-align: center;
+    padding: 10px 0;
+    display: none;
+}
+
+input[type=checkbox]{
+    display: none;
+}
+input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+
+.fa-angle-double-up{
+    visibility: hidden;
+}
+
+@media screen and (max-width : 760px){
+    #menu {
+        position: static;
+        display: none;
+    }
+    .menuItem {
+        margin-bottom: 1px;
+    }
+    .menuItem, .menuLink {
+        width: 100%;
+    }
+    .menubar {
+        display:block;
+    }
+}
+
+@media screen and (max-width : 980px){
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.photo {
+    background-image: url("tlo4.jpg");
+    height: 300px;
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+.welcome {
+    color: rgb(239, 245, 217);
+    padding: 70px;
+}
+
+.picture {
+    grid-area: picture;
+    
+}
+.picture img {
+    padding: 10px;;
+    height: 180px;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: contain; 
+}
+.name {
+    grid-area: name;
+    
+}
+.age {
+    grid-area: age;
+}
+.job {
+    grid-area: job;
+}
+.phone {
+    grid-area: phone;
+}
+.mail {
+    grid-area: mail;
+}
+.social {
+    grid-area: social;
+    text-align: center;
+    background-color: rgb(169, 169, 169);
+}
+
+.social_link {
+    text-decoration: none;
+    color: rgb(245, 245, 220);
+}
+
+.social > div
+{
+    display: inline-block;
+    padding: 3px 20px;
+}
+
+
+.aboutMe_container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas: 
+        "picture name"
+        "picture age"
+        "picture job"
+        "picture phone"
+        "picture mail"
+        "social social";
+}
+
+.aboutMe_item {
+    align-self: center;
+}
+
